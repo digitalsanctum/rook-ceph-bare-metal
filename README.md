@@ -84,5 +84,24 @@ Once it's in a running state, you can connect via:
 kubectl -n rook-ceph exec -it $(kubectl -n rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') bash
 ```
 
+## troubleshooting
+
+If it appears everything is running or completed but you're still left with 0 OSDs, then look at the logs of the `*osd-prepare*` pods.
+
+Get a list of the osd-prepare pods:
+```
+kubectl -n rook-ceph get pod | grep prepare
+```
+will return something like:
+```
+rook-ceph-osd-prepare-nuc2-b48rk                 0/1     Completed   0          36m
+rook-ceph-osd-prepare-nuc3-gtrxx                 0/1     Completed   0          35m
+```
+
+To view the logs of one of the pods:
+```
+kubectl -n rook-ceph logs rook-ceph-osd-prepare-nuc2-b48rk
+```
+
 
 
