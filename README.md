@@ -1,0 +1,1 @@
+# rook-ceph-bare-metal
