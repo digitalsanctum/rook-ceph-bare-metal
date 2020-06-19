@@ -36,6 +36,33 @@ kubectl apply -f operator.yaml
 kubectl apply -f cluster.yaml
 ```
 
+## verification
+
+To get a list of all the `rook-ceph` pods:
+```
+$ kubectl -n rook-ceph get pod
+NAME                                             READY   STATUS      RESTARTS   AGE
+csi-cephfsplugin-cktzz                           3/3     Running     0          81m
+csi-cephfsplugin-provisioner-7469b99d4b-6ztmx    5/5     Running     0          81m
+csi-cephfsplugin-provisioner-7469b99d4b-vsh2f    5/5     Running     0          81m
+csi-cephfsplugin-zzgpk                           3/3     Running     0          81m
+csi-rbdplugin-98mhx                              3/3     Running     0          81m
+csi-rbdplugin-provisioner-865f4d8d-mbsn7         6/6     Running     0          81m
+csi-rbdplugin-provisioner-865f4d8d-x9wpf         6/6     Running     0          81m
+csi-rbdplugin-vwkr6                              3/3     Running     0          81m
+rook-ceph-crashcollector-nuc2-56c879b75-n75mb    1/1     Running     0          81m
+rook-ceph-crashcollector-nuc3-544c96f59b-2wfmk   1/1     Running     0          80m
+rook-ceph-mgr-a-7cdf8dbd64-tq4sg                 1/1     Running     0          25m
+rook-ceph-mon-a-6955c688b4-b62vg                 1/1     Running     0          81m
+rook-ceph-mon-b-5895995559-sqs55                 1/1     Running     0          81m
+rook-ceph-operator-5b6674cb6-xbdx4               1/1     Running     0          82m
+rook-ceph-osd-prepare-nuc2-b48rk                 0/1     Completed   0          25m
+rook-ceph-osd-prepare-nuc3-gtrxx                 0/1     Completed   0          25m
+rook-ceph-tools-67788f4dd7-6rdn8                 1/1     Running     0          79m
+rook-discover-dpzqr                              1/1     Running     0          82m
+rook-discover-m4fn5                              1/1     Running     0          82m
+```
+
 ## toolbox
 
 ### install
