@@ -177,15 +177,14 @@ spec:
 #      config: # configuration can be specified at the node level which overrides the cluster level config
 #        storeType: filestore
     - name: "nuc2"
-      devices: 
-      - name: "sda2"
-      directories:
-      - path: "/var/lib/rook-storage"
+      devices:
+        - name: "sda3"
     - name: "nuc3"
       devices: 
-      - name: "sda2"  
-      directories:
-      - path: "/var/lib/rook-storage"
+      - name: "sda3"
+    - name: "nuc4"
+      devices:
+        - name: "sda3"
   # The section for configuring management of daemon disruptions during upgrade or fencing.
   disruptionManagement:
     # If true, the operator will create and manage PodDisruptionBudgets for OSD, Mon, RGW, and MDS daemons. OSD PDBs are managed dynamically
