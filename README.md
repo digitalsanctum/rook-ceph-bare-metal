@@ -31,8 +31,9 @@ Then reinstall the rook service.
 
 ```
 kubectl delete -f cluster.yaml
-kubectl detele -f operator.yaml
+kubectl delete -f operator.yaml
 kubectl apply -f operator.yaml
+## verify the rook-ceph-operator is in the `Running` state before proceeding
 kubectl apply -f cluster.yaml
 ```
 
