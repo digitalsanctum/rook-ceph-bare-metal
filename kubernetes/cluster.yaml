@@ -181,7 +181,7 @@ spec:
         - name: "sda3"
     - name: "nuc3"
       devices: 
-      - name: "sda3"
+        - name: "sda3"
     - name: "nuc4"
       devices:
         - name: "sda3"
